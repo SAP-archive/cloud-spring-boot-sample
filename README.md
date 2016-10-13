@@ -9,6 +9,15 @@ Quick start
 
 Clone the repo, `https://github.com/SAP/cloud-spring-boot-sample.git`, or [download the latest release](https://github.com/SAP/cloud-spring-boot-sample/archive/master.zip).
 
+To run the app stand-alone with an embedded Tomcat run
+
+``mvn spring-boot:run``
+
+To create a `WAR` file that can be deployed to SAP HANA Cloud Platform (Tomcat 8 runtime) execute the following command:
+
+``mvn -P production clean package``
+
+
 Versioning
 ----------
 

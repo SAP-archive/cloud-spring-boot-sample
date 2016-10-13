@@ -9,6 +9,6 @@ public class HomeController
 	@RequestMapping("/")
 	public String home()
 	{
-		return "Hello HCP!";
+		return "Hello again!";
 	}
 }
