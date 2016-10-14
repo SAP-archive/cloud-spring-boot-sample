@@ -51,6 +51,30 @@
 	        <scope>provided</scope>
 	    </dependency>
 	</dependencies>
+	
+	<profiles>
+        <!-- local/development profile-->
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <!-- CF profile-->
+        <profile>
+            <id>cf</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <dependencies>
+                <dependency>
+                    <groupId>org.springframework.boot</groupId>
+	        		<artifactId>spring-boot-starter-logging</artifactId>
+                </dependency>
+            </dependencies>
+        </profile>
+    </profiles>
 	     
 	<build>
 		<finalName>ROOT</finalName>

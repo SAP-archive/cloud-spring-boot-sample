@@ -1,0 +1,9 @@
+---
+applications:
+- name: springboot-${random-word}
+  memory: 512M
+  instances: 1
+  host: springboot
+  path: target/ROOT.war
+
+  

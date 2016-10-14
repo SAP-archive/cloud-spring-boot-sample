@@ -13,9 +13,17 @@ To run the app stand-alone with an embedded Tomcat run
 
 ``mvn spring-boot:run``
 
-To create a `WAR` file that can be deployed to SAP HANA Cloud Platform (Tomcat 8 runtime) execute the following command:
+To create a `WAR` file that can be deployed to **SAP HANA Cloud Platform** (Tomcat 8 runtime) execute the following command:
 
 ``mvn clean package install``
+
+>> **NOTE:** As outlined in the [official online documnetation](https://help.hana.ondemand.com/help/frameset.htm?e6e8ccd3bb571014b6afdc54744eef4d.html) the assembeld `WAR` file MUST not include any 'SLF4J' related jar file, hence we flag the `spring-boot-starter-logging` dependency as `provided`(by the runtime).
+
+
+To create a `WAR` file that can be deployed to **SAP HANA Cloud Platform, Starter Edition for Cloud Foundry Services (Beta)** execute the following command:
+
+``mvn -P cf clean package install``
+
 
 
 Versioning
