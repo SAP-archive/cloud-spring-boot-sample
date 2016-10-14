@@ -9,7 +9,7 @@ Quick start
 
 Clone the repo, `https://github.com/SAP/cloud-spring-boot-sample.git`, or [download the latest release](https://github.com/SAP/cloud-spring-boot-sample/archive/master.zip).
 
-To run the app stand-alone with an embedded Tomcat run
+To run the app stand-alone with an embedded Tomcat simply run the following command:
 
 ``mvn spring-boot:run``
 
@@ -17,7 +17,7 @@ To create a `WAR` file that can be deployed to **SAP HANA Cloud Platform** (Tomc
 
 ``mvn clean package install``
 
->> **NOTE:** As outlined in the [official online documnetation](https://help.hana.ondemand.com/help/frameset.htm?e6e8ccd3bb571014b6afdc54744eef4d.html) the assembeld `WAR` file MUST not include any 'SLF4J' related jar file, hence we flag the `spring-boot-starter-logging` dependency as `provided`(by the runtime).
+> **NOTE:** As outlined in the [official online documentation](https://help.hana.ondemand.com/help/frameset.htm?e6e8ccd3bb571014b6afdc54744eef4d.html) the assembled `WAR` file MUST not include any `SLF4J` related jar file, hence we flag the `spring-boot-starter-logging` dependency as `provided`(by the runtime).
 
 
 To create a `WAR` file that can be deployed to **SAP HANA Cloud Platform, Starter Edition for Cloud Foundry Services (Beta)** execute the following command:
