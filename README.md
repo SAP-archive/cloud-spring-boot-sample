@@ -15,7 +15,7 @@ To run the app stand-alone with an embedded Tomcat run
 
 To create a `WAR` file that can be deployed to SAP HANA Cloud Platform (Tomcat 8 runtime) execute the following command:
 
-``mvn -P production clean package``
+``mvn clean package install``
 
 
 Versioning
