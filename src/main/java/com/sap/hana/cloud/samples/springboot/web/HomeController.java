@@ -1,6 +1,5 @@
 package com.sap.hana.cloud.samples.springboot.web;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -9,17 +8,21 @@ import java.util.Map;
 
 import javax.sql.DataSource;
 
-import org.apache.commons.dbcp.ConnectionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.sap.hana.cloud.samples.springboot.util.DBInformation;
+
 @Controller
 public class HomeController
 {
+	private static final Logger log = LoggerFactory.getLogger(HomeController.class);
+	
 	@Autowired(required = false)
 	DataSource dataSource;
 
@@ -29,8 +32,12 @@ public class HomeController
 	public String home(Model model)
 	{
 		Map<Class<?>, String> services = new LinkedHashMap<Class<?>, String>();
-		services.put(dataSource.getClass(), toString(dataSource));
-		model.addAttribute("services", services.entrySet());
+		
+		if (dataSource != null)
+		{
+			services.put(dataSource.getClass(), toString(dataSource));
+			model.addAttribute("services", services.entrySet());
+		}
 		
 		// model.addAttribute("instanceInfo", instanceInfo);
 
@@ -47,22 +54,13 @@ public class HomeController
 		{
 			try
 			{				
-				Field urlField = ReflectionUtils.findField(dataSource.getClass(), "url");
-				ReflectionUtils.makeAccessible(urlField);
-				return stripCredentials((String) urlField.get(dataSource));
+				DBInformation dbInfo = new DBInformation(dataSource);
+				return stripCredentials(dbInfo.getUrl());
 			}
-			catch (Exception fe)
+			catch (Exception ex)
 			{
-				try
-				{
-					Method urlMethod = ReflectionUtils.findMethod(dataSource.getClass(), "getUrl");
-					ReflectionUtils.makeAccessible(urlMethod);
-					return stripCredentials((String) urlMethod.invoke(dataSource, (Object[]) null));
-				}
-				catch (Exception me)
-				{					
-					return "<unknown> " + me.toString();
-				}
+				log.error("An error occured while trying to acquire DB information", ex);
+				return "<error>";
 			}
 		}
 	}

@@ -5,13 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
-//@Configuration
-//@ComponentScan
-//@EnableAutoConfiguration(exclude = { DataSourceAutoConfiguration.class })
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer 
 {
-
+	
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) 
     {
@@ -22,5 +19,4 @@ public class Application extends SpringBootServletInitializer
 	{
 		SpringApplication.run(Application.class, args);
 	}
-		
 }
