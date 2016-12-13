@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context  path="">
+<!--  -->
+    <Resource name="jdbc/DefaultDB"
+              auth="Container"
+              type="javax.sql.DataSource"
+              factory="com.sap.jpaas.service.persistence.core.JNDIDataSourceFactory"/>
+-->
+              
+<!--  		             
+	<Resource name="jdbc/DefaultDB"
+		  driverClassName="org.apache.derby.jdbc.ClientDriver"
+		  type="javax.sql.DataSource" 
+		  username="demo"
+		  password="demo"
+		  url="jdbc:derby://localhost:1527/DemoDB;create=true"/>
+		  
+ --> 
+</Context>
