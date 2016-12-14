@@ -20,8 +20,8 @@ import org.springframework.jndi.JndiObjectFactoryBean;
 
 import com.sap.hana.cloud.samples.springboot.util.DBInformation;
 
-@Configuration
-@Profile({"standalone", "dev"})
+//@Configuration
+//@Profile({"standalone", "dev"})
 public class StandaloneConfig 
 {
 	private static final Logger log = LoggerFactory.getLogger(StandaloneConfig.class);

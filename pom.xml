@@ -5,7 +5,7 @@
 
 	<groupId>com.sap.hana.cloud.samples</groupId>
 	<artifactId>cloud-spring-boot-sample</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>${packaging.type}</packaging>
 
 	<name>cloud-spring-boot-sample</name>
@@ -121,6 +121,11 @@
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-logging</artifactId>
 				</dependency>
+				<dependency>
+					<groupId>org.apache.derby</groupId>
+					<artifactId>derby</artifactId>
+					<scope>runtime</scope>
+				</dependency>
 			</dependencies>
 		</profile>
 		
@@ -142,6 +147,15 @@
 					<groupId>ch.qos.logback</groupId>
 					<artifactId>logback-classic</artifactId>
 					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-tomcat</artifactId>
+					<scope>provided</scope>
+				</dependency>
+				<dependency>
+					<groupId>org.apache.tomcat</groupId>
+					<artifactId>tomcat-jdbc</artifactId>
 				</dependency>
 			</dependencies>
 		</profile>

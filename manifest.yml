@@ -4,6 +4,10 @@ applications:
   memory: 512M
   instances: 1
   host: springboot
-  path: target/ROOT.war
+  path: target/ROOT.jar
+  services:
+    - postgres
+  env:
+    SPRING_PROFILES_DEFAULT: cf
 
   
