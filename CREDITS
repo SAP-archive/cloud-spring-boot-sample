@@ -1,0 +1,9 @@
+This program references/bundles the following third party open source or other free download components. 
+The third party licensors of these components may provide additional license rights, 
+terms and conditions and/or require certain notices as described below. 
+
+jQuery (http://jquery.com/)
+Licensed under MIT - https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt
+
+Twitter Bootstrap (http://twitter.github.com/bootstrap/)
+Licensed under Apache License, Version 2.0 - http://www.apache.org/licenses/LICENSE-2.0
