@@ -1,9 +1,8 @@
 ---
 applications:
-- name: springboot-${random-word}
+- name: springboot
   memory: 512M
   instances: 1
-  host: springboot
   path: target/ROOT.jar
   services:
     - postgres
