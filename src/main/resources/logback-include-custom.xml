@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included>
+	
+	<logger name=" org.apache.jasper.servlet.TldScanner" level="ERROR"/>
+
+    <logger name="org.springframework.cloud" level="DEBUG"/>
+    <logger name="com.sap.hana.cloud.hcp" level="DEBUG"/>
+
+    <logger name="com.sap.hana.cloud.samples.springboot" level="DEBUG"/>
+    <logger name="org.thymeleaf" level="WARN" />
+</included>

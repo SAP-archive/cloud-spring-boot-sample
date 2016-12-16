@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context  path="">
-<!--  -->
+
     <Resource name="jdbc/DefaultDB"
               auth="Container"
               type="javax.sql.DataSource"
               factory="com.sap.jpaas.service.persistence.core.JNDIDataSourceFactory"/>
--->
+
               
 <!--  		             
 	<Resource name="jdbc/DefaultDB"
